@@ -1,7 +1,7 @@
-const parseJson = require('./loader/parse-json')
-const parseWxml = require('./loader/parse-wxml');
+const parseJson = require('./parse-json')
+const parseWxml = require('./parse-wxml');
 
-const { JSONSUFFIX, WXMLSUFFIX } = require('./helpers/constant')
+const { JSONSUFFIX, WXMLSUFFIX } = require('../helpers/constant')
 
 
 
