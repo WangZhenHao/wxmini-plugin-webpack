@@ -1,6 +1,6 @@
 # wxmini-plugin-webpack5
 
-webpack5版本的微信小程序插件
+webpack5版本的微信小程序插件,让原生小程的序开发转变成工程化。
 
 ### 运行
 ```
