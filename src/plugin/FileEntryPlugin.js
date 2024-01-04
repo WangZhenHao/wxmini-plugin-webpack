@@ -17,8 +17,9 @@ module.exports = class FileEntryPlugin {
         this.chunNameIndex = 0;
         this.chunkNames = ["main.js"];
         this.isFirstCompile = true;
-        this._row = {};
+        // this._row = {};
         this.chunkMap = new Map();
+        this.entryList = []
     }
 
     apply(compiler) {
@@ -56,23 +57,23 @@ module.exports = class FileEntryPlugin {
                 this.context
             );
     
-            if (!appJson.entry.js || !appJson.entry.json) {
-                throw new Error("请添加app.js和app.json文件");
+
+            if(appJson.entryList.length !== 3) {
+                throw new Error("必须要有三个app入口文件");
             }
-            // this.chunkNames = this.chunkNames.splice(0, 1);
-            // this.chunNameIndex = 0;
-            this._row[appJson.entry.json] = true;
+
+            // this._row[appJson.entry.json] = true;
             
             const entryList = resolvePage(appJson.appCode.pages, this.context);
             const configJosnEntryList = resoveConfigJson(this.context)
-            this.entryList = [appJson.entry.js, appJson.entry.json, ...entryList, ...configJosnEntryList];
+            this.entryList = [...appJson.entryList, ...entryList, ...configJosnEntryList];
     
             this.reolveEntry(this.entryList);
 
             resolve()
         })
        
-        // this.loadJsonFiles([appJson.entry.json])
+
     }
     setEmitHook() {
         if(this.isFirstCompile) {

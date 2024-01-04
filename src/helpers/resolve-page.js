@@ -18,14 +18,25 @@ function resoveConfigJson(context) {
 }
 function resolveAppJson(appEntry, context) {
     const entryJSON = path.join(context, appEntry);
-    const entryJs =  entryJSON.replace(/\.json/, '.js')
-    const appCode = JSON.parse(readFileSync(entryJSON, { encoding: 'utf-8' }))
+    // const entryJs =  entryJSON.replace(/\.json/, '.js')
+    const appCode = JSON.parse(readFileSync(entryJSON, { encoding: 'utf-8' }));
+    const entryList = []
+    const basename = entryJSON.replace(/\.json/, '')
+
+    SUFFIXLIST.forEach((suffix) => {
+        const filename = basename + suffix
+        if (existsSync(filename)) {
+            entryList.push(filename)
+        }
+    });
 
     return {
-        entry: {
-            js: existsSync(entryJs) ? entryJs : null,
-            json: existsSync(entryJSON) ? entryJSON : null
-        },
+        // entry: {
+        //     js: existsSync(entryJs) ? entryJs : null,
+        //     json: existsSync(entryJSON) ? entryJSON : null,
+        //     css: ''
+        // },
+        entryList,
         appCode
     }
 }

@@ -1,5 +1,5 @@
 const CHUNKNAME = 'miniplugin_chunk_name_'
-const SUFFIXLIST = [".wxml", ".wxss", '.less', ".json", ".js", ".ts"];
+const SUFFIXLIST = [".wxml", ".wxss", '.less', ".json", ".js", ".ts", '.scss'];
 const SCRIPTSUFFIX = /\.(js|ts)$/
 const JSONSUFFIX = /\.json$/
 const WXMLSUFFIX = /\.wxml$/
