@@ -1,6 +1,6 @@
 {
     "navigationBarTitleText": "home",
     "usingComponents": {
-        
+        "my-home": "@page/home/my-home/index"
     }
 }

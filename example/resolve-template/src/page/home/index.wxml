@@ -1,5 +1,5 @@
 <!-- <wxs src="@common/test.wxs" module="tools" /> -->
-<view class="home">
+<view class="home" disable>
 sdfsdfsdfsaf
 <navigator url="/page/login/index">login跳转</navigator>
 </view>
