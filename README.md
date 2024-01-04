@@ -2,3 +2,14 @@
 
 webpack5版本的微信小程序插件
 
+### 运行
+```
+安装依赖
+npm i
+
+// 运行脚本
+node example/build-examples.js resolve-template
+或者
+npm run dev
+npm run build
+```
