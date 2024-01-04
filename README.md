@@ -1,6 +1,6 @@
 # wxmini-plugin-webpack5
 
-webpack5版本的微信小程序插件,让原生小程的序开发转变成工程化。
+webpack5版本的微信小程序插件,让微信原生小程的开发也能变成工程化。
 
 ### 运行
 ```
@@ -13,3 +13,6 @@ node example/build-examples.js resolve-template
 npm run dev
 npm run build
 ```
+
+
+### qq讨论群: 475870039
