@@ -1,17 +1,7 @@
 var path = require('path');
 var webpackMajorVersion = require('webpack/package.json').version.split('.')[0];
 const  MiniProgramPlugin  = require('../../src').plugin
-// const html = require('html-webpack-plugin')
 
-// const fileLoader = (name) => ({
-//   loader: 'file-loader',
-//   options: {
-//     publicPath: '',
-//     context: __dirname,
-//     name,
-//   },
-// });
-// console.log(MiniProgramPlugin.plugin)
 module.exports = {
     // resolve: {
     //   alias: {
