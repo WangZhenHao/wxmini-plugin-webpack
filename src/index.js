@@ -1,4 +1,3 @@
-const path = require('path');
 const FileEntryPlugin = require('./plugin/FileEntryPlugin')
 const MiniTemplatePlugin = require('./plugin/MiniTemplatePlugin')
 
@@ -21,15 +20,21 @@ module.exports = class MiniProgramPlugin {
             outputUtil: this.outputUtil
         }).apply(compiler)
 
-        compiler.hooks.emit.tap('MiniProgramPlugin', this.setEmitHook.bind(this))
+        compiler.hooks.compilation.tap('MiniProgramPlugin', (compilation) => {
+            compilation.hooks.processAssets.tap({
+                name: 'setEmit',
+                stage: compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
+                additionalAssets: true          
+            }, this.setEmitHook.bind(this))
+        })
     }
 
     /**
      * Hook into the webpack compilation
      * @param {Compilation} compilation
      */
-    setEmitHook(compilation) {
-        const assets = compilation.assets
+    setEmitHook(assets) {
+        // const assets = compilation.assets
 
         Object.keys(assets).forEach(fileName => {
             if(this.FileEntryPlugin.chunkNames.indexOf(fileName) >= 0) {
