@@ -4,11 +4,14 @@ const { LOADER_ACCEPT_FILE_EXTS, RELATIVEPATH } = require('../helpers/constant')
 const { relativePath } = require('../helpers/utils')
 const isInvaildExt = ext => LOADER_ACCEPT_FILE_EXTS.indexOf(ext) === -1
 const wxmlDepsReg = /src=('|")([^"]*)('|")/g;
+const minify = require('html-minifier').minify;
 
 async function parseWxml(context, source, callback) {
     let matched = null;
     const promiseModule = []
     
+    source = minify(source, { removeComments: true, collapseWhitespace: true });
+
     while ((matched = wxmlDepsReg.exec(source)) !== null) {
         let dep = matched[2]
         let ext = path.extname(dep)
