@@ -1,17 +1,13 @@
 var path = require('path');
 var webpackMajorVersion = require('webpack/package.json').version.split('.')[0];
-const MiniProgramPlugin = require('../../src/index')
-// const html = require('html-webpack-plugin')
+const  MiniProgramPlugin  = require('wxmini-plugin-webpack').plugin
 
-const fileLoader = (name) => ({
-  loader: 'file-loader',
-  options: {
-    publicPath: '',
-    context: __dirname,
-    name,
-  },
-});
 module.exports = {
+    // resolve: {
+    //   alias: {
+    //     'wxmini-plugin-webpack5': path.resolve('../../src/')
+    //   }
+    // },
     context: path.join(__dirname, './src'),
     mode: 'development',
     entry: './app.json',
@@ -67,16 +63,24 @@ module.exports = {
             filename: '[path][name][ext]'
           },
           use: [
-            {
-              loader: path.resolve(__dirname, '../../src/loader.js'),
-            }
+            'wxmini-plugin-webpack'
+            // {
+            //   loader: path.resolve(__dirname, '../../src/index.js'),
+            // }
           ]
-          // use: [
-          //   fileLoader('[path][name].[ext]'),
-          //   {
-          //     loader: path.resolve(__dirname, '../../src/loader.js'),
-          //   },
-          // ]
+        },
+        {
+          test: /\.json/,
+          type: 'asset/resource',
+          generator: {
+            filename: '[path][name][ext]'
+          },
+          use: [
+            'wxmini-plugin-webpack'
+            // {
+            //   loader: path.resolve(__dirname, '../../src/index.js'),
+            // },
+          ]
         },
         {
           test: /\.wxs$/,
@@ -92,31 +96,9 @@ module.exports = {
             filename: '[path][name][ext]'
           }
         },
-        {
-          test: /\.(png|jpg|gif)$/,
-          type: 'asset/resource',
-          generator: {
-            filename: '[path][name][ext]'
-          }
-        },
-        {
-          test: /\.json/,
-          type: 'asset/resource',
-          generator: {
-            filename: '[path][name][ext]'
-          },
-          use: [
-            {
-              loader: path.resolve(__dirname, '../../src/loader.js'),
-            },
-          ]
-        }
       ]
       },
     plugins: [
-        new MiniProgramPlugin(),
-        // new html({
-        //   template: './test.html'
-        // })
+        new MiniProgramPlugin()
     ]
 }

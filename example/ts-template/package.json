@@ -1,0 +1,21 @@
+{
+  "name": "ts-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "dev": "webpack --config ./webpack.config.js --watch",
+    "build": "webpack --config ./webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^4.2.0",
+    "less-loader": "^11.1.4",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "wxmini-plugin-webpack": "^1.0.1"
+  }
+}

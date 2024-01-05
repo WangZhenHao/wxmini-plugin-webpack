@@ -1,0 +1,8 @@
+var foo = "测试";
+var bar = function(d) {
+  return d;
+}
+module.exports = {
+  foo: foo,
+  bar: bar
+};

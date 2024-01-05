@@ -1,7 +1,6 @@
 {
     "navigationBarTitleText": "login",
     "usingComponents": {
-        "test": "@components/test/index",
         "my-home": "@page/home/my-home/index"
     }
 }
