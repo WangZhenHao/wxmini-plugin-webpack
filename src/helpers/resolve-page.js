@@ -20,15 +20,30 @@ function resolveAppJson(appEntry, context) {
     const entryJSON = path.join(context, appEntry);
     // const entryJs =  entryJSON.replace(/\.json/, '.js')
     const appCode = JSON.parse(readFileSync(entryJSON, { encoding: 'utf-8' }));
-    const entryList = []
-    const basename = entryJSON.replace(/\.json/, '')
 
-    SUFFIXLIST.forEach((suffix) => {
-        const filename = basename + suffix
-        if (existsSync(filename)) {
-            entryList.push(filename)
-        }
-    });
+    const basename = entryJSON.replace(/\.json/, '')
+    const entryList = resolvePage([basename], '')
+
+    let subPageList = []
+
+    if(appCode.subPackages) {
+        const subList = []
+        appCode.subPackages.forEach(item => {
+            // const root = item.root.replace(//)
+            item.pages.forEach((pageList) => {
+                const path =  item.root + '/' +pageList;
+                subList.push(path)
+            })
+        })
+
+        subPageList = resolvePage(subList, context)
+    }
+    // SUFFIXLIST.forEach((suffix) => {
+    //     const filename = basename + suffix
+    //     if (existsSync(filename)) {
+    //         entryList.push(filename)
+    //     }
+    // });
 
     return {
         // entry: {
@@ -37,6 +52,7 @@ function resolveAppJson(appEntry, context) {
         //     css: ''
         // },
         entryList,
+        subPageList,
         appCode
     }
 }

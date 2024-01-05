@@ -64,9 +64,10 @@ module.exports = class FileEntryPlugin {
 
             // this._row[appJson.entry.json] = true;
             
-            const entryList = resolvePage(appJson.appCode.pages, this.context);
+            // const entryList = resolvePage(appJson.appCode.pages, this.context);
+            const pageList = appJson.subPageList;
             const configJosnEntryList = resoveConfigJson(this.context)
-            this.entryList = [...appJson.entryList, ...entryList, ...configJosnEntryList];
+            this.entryList = [...appJson.entryList, ...pageList, ...configJosnEntryList];
     
             this.reolveEntry(this.entryList);
 

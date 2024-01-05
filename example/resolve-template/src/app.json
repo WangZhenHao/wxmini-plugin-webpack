@@ -2,6 +2,22 @@
     "pages": [
       "page/home/index"
     ],
+    "subPackages": [
+      {
+        "name": "subFun",
+        "root": "pageSub/subFun",
+        "pages": [
+          "testpage/index"
+        ]
+      },
+      {
+        "name": "userCenter",
+        "root": "pageSub/userCenter",
+        "pages": [
+          "discount/index"
+        ]
+      }
+    ],
     "window": {
       "backgroundTextStyle": "light",
       "navigationBarBackgroundColor": "#fff",

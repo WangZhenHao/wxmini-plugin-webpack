@@ -7,6 +7,14 @@
     "src",
     "README.md"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WangZhenHao/wxmini-plugin-webpack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WangZhenHao/wxmini-plugin-webpack/issues"
+  },
+  "homepage": "https://github.com/WangZhenHao/wxmini-plugin-webpack#readme",
   "scripts": {
     "dev": "webpack --config ./example/resolve-template/webpack.config.js --watch",
     "build": "webpack --config ./example/resolve-template/webpack.config.js",
