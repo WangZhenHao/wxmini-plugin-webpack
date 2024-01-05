@@ -1,7 +1,7 @@
 
 const path = require("path");
 const { existsSync, readFileSync } = require('fs')
-const { SUFFIXLIST, SCRIPTSUFFIX } = require('./constant')
+const { SUFFIXLIST, SCRIPTSUFFIX, JSONSUFFIX } = require('./constant')
 
 function resoveConfigJson(context) {
     const list = ['project.config.json', 'project.private.config.json', 'sitemap.json'];
@@ -31,26 +31,16 @@ function resolveAppJson(appEntry, context) {
         appCode.subPackages.forEach(item => {
             // const root = item.root.replace(//)
             item.pages.forEach((pageList) => {
-                const path =  item.root + '/' +pageList;
+                const path =  item.root + pageList;
                 subList.push(path)
             })
         })
 
         subPageList = resolvePage(subList, context)
     }
-    // SUFFIXLIST.forEach((suffix) => {
-    //     const filename = basename + suffix
-    //     if (existsSync(filename)) {
-    //         entryList.push(filename)
-    //     }
-    // });
+
 
     return {
-        // entry: {
-        //     js: existsSync(entryJs) ? entryJs : null,
-        //     json: existsSync(entryJSON) ? entryJSON : null,
-        //     css: ''
-        // },
         entryList,
         subPageList,
         appCode
@@ -61,8 +51,14 @@ function resolvePage(pageList, context) {
     const list = [];
 
     pageList.forEach((page) => {
+
+        const checkpath = path.resolve(context, page + '.json');
+        if (!existsSync(checkpath)) {
+            console.warn('页面或者组件路径: ' + path.resolve(context, page) + '不存在')
+        }
+
         SUFFIXLIST.forEach((suffix) => {
-            const entry = path.join(context, page + suffix);
+            const entry = path.resolve(context, page + suffix);
 
             if (existsSync(entry)) {
                 list.push(entry);
