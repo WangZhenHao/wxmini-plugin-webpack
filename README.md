@@ -6,6 +6,50 @@ webpack5版本的微信小程序插件,让微信原生小程的开发也能变�
 npm -i -D wxmini-plugin-webpack
 ```
 
+```js
+// webpack配置
+
+const  MiniProgramPlugin  = require('wxmini-plugin-webpack').plugin
+
+module.exports = {
+    ...,
+    ...,
+    module: {
+      rules: [
+        {
+          test: /\.wxml$/,
+          type: 'asset/resource',
+          generator: {
+            filename: '[path][name][ext]'
+          },
+          use: [
+            'wxmini-plugin-webpack'
+          ]
+        },
+        {
+          test: /\.json/,
+          type: 'asset/resource',
+          generator: {
+            filename: '[path][name][ext]'
+          },
+          use: [
+            'wxmini-plugin-webpack'
+          ]
+        }
+        ...,
+        ...,
+        ...
+      ]
+      },
+    plugins: [
+        new MiniProgramPlugin()
+    ],
+    ...,
+    ...,
+    ...
+}
+```
+
 ### 本地运行
 ```
 安装依赖
