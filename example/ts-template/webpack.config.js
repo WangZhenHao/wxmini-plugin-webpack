@@ -8,6 +8,7 @@ module.exports = {
     //     'wxmini-plugin-webpack5': path.resolve('../../src/')
     //   }
     // },
+    resolve: { extensions: ['.ts', '.js'] },
     context: path.join(__dirname, './src'),
     mode: 'development',
     entry: './app.json',
@@ -42,8 +43,13 @@ module.exports = {
     module: {
       rules: [
         {
+          test: /\.ts$/,
+          exclude: path.resolve(__dirname, '../node_modules'),
+          use: ['ts-loader'],
+        },
+        {
           test: /\.js$/,
-          exclude: path.resolve(__dirname, '../../node_modules'),
+          exclude: path.resolve(__dirname, '../node_modules'),
           use: ['babel-loader'],
         },
         {
