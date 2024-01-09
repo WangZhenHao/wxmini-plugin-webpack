@@ -1,0 +1,5 @@
+<view class="login">
+    <test></test>
+    <my-home></my-home>
+</view>
+<wxs src="../home/test.wxs" module="tools2" />

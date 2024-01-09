@@ -1,0 +1,37 @@
+{
+    "pages": [
+      "page/home/index"
+    ],
+    "subPackages": [
+      {
+        "name": "subFun",
+        "root": "pageSub/subFun/",
+        "pages": [
+          "testpage/index"
+        ]
+      },
+      {
+        "name": "userCenter",
+        "root": "pageSub/userCenter/",
+        "pages": [
+          "discount/index"
+        ]
+      }
+    ],
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#fff",
+      "navigationBarTitleText": "WeChat",
+      "navigationBarTextStyle": "black"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "为推荐您最近门店，需要获取您的位置信息"
+        }
+    },
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+      
+    }
+  
+  }

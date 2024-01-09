@@ -1,0 +1,7 @@
+<!-- <wxs src="@common/test.wxs" module="tools" /> -->
+<!-- <view class="home" disable>
+sdfsdfsdfsaf
+<navigator url="/page/login/index">login跳转</navigator>
+</view>
+{{ tools.foo }} -->
+<view style="text-align: center; padding: 100px; font-size: 20px;">hello webpack5</view>
