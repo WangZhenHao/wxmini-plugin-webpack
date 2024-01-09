@@ -5,14 +5,14 @@
     "subPackages": [
       {
         "name": "subFun",
-        "root": "pageSub/subFun",
+        "root": "pageSub/subFun/",
         "pages": [
           "testpage/index"
         ]
       },
       {
         "name": "userCenter",
-        "root": "pageSub/userCenter",
+        "root": "pageSub/userCenter/",
         "pages": [
           "discount/index"
         ]
