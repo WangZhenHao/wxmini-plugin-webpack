@@ -81,3 +81,6 @@ function calResolve(resolveFn, rootContext, request) {
 }
 
 module.exports = parseWxml;
+
+module.exports.addModule = addModule;
+module.exports.calResolve = calResolve;

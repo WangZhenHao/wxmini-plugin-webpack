@@ -14,6 +14,7 @@ module.exports = {
     devtool: false,
     output: {
         path: path.join(__dirname, 'dist/webpack-' + webpackMajorVersion),
+        clean: true
     },
     watch: false,
     target: 'node',
@@ -94,7 +95,13 @@ module.exports = {
           type: 'asset/resource',
           generator: {
             filename: '[path][name][ext]'
-          }
+          },
+          use: [
+            // 'wxmini-plugin-webpack5'
+            {
+              loader: path.resolve(__dirname, '../../src/index.js'),
+            },
+          ]
         },
         {
           test: /\.(png|jpg|gif)$/,

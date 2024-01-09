@@ -3,6 +3,7 @@ const SUFFIXLIST = [".wxml", ".wxss", '.less', ".json", ".js", ".ts", '.scss'];
 const SCRIPTSUFFIX = /\.(js|ts)$/
 const JSONSUFFIX = /\.json$/
 const WXMLSUFFIX = /\.wxml$/
+const WXSSSUFFIX = /.wxss$/
 const LOADER_ACCEPT_FILE_EXTS = ['.wxs'];
 // 相对路径
 const RELATIVEPATH = /^(\.\/|\.\.\/)/
@@ -15,5 +16,6 @@ module.exports = {
     JSONSUFFIX,
     WXMLSUFFIX,
     LOADER_ACCEPT_FILE_EXTS,
-    RELATIVEPATH
+    RELATIVEPATH,
+    WXSSSUFFIX
 }
