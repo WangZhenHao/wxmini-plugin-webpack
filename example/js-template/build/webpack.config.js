@@ -22,7 +22,7 @@ module.exports = {
     output: {
         path: resolve(`dist/${BUILD_ENV}`),
         // 开始构建的时候，清楚文件
-        clean: true
+        // clean: true
     },
     target: 'node',
     optimization: {
@@ -97,14 +97,16 @@ module.exports = {
           type: 'asset/resource',
           generator: {
             filename: '[path][name][ext]'
-          }
+          },
+          use: ['wxmini-plugin-webpack']
         },
         {
           test: /\.wxss/,
           type: 'asset/resource',
           generator: {
             filename: '[path][name][ext]'
-          }
+          },
+          use: ['wxmini-plugin-webpack']
         },
         {
           test: /\.(png|jpg|gif)$/,

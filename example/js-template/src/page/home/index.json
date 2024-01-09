@@ -1,6 +1,7 @@
 {
-    "navigationBarTitleText": "home",
+    "navigationBarTitleText": "测试2",
     "usingComponents": {
-        "vant-button": "@vant/button/index"
+        "van-button": "@vant/button/index",
+        "van-switch": "@vant/switch/index"
     }
 }

@@ -9,12 +9,16 @@ const { relativePath } = require("../helpers/utils");
 
 const { RELATIVEPATH } = require('../helpers/constant')
 
-const wxssDepsReg = /@import ('|")([^"].+?)('|");/g
+const map = {
+    wxss: /@import ('|")([^"].+?)('|");/g,
+    wxs: /require\(('|")([^)]*.wxs)('|")\)/g
+}
 
-async function parseWxss(context, source, callback) {
+
+async function parseWxss(context, source, callback, key = 'wxss') {
     let matched = null;
     const promiseModule = [];
-
+    const wxssDepsReg = map[key]
     // 不解析@import关键字
     // const result = new CleanCSS({inline: false }).minify(source);
 

@@ -2,7 +2,7 @@ const parseJson = require('./parse-json')
 const parseWxml = require('./parse-wxml');
 const parseWxss = require('./parse-wxss')
 
-const { JSONSUFFIX, WXMLSUFFIX, WXSSSUFFIX } = require('../helpers/constant')
+const { JSONSUFFIX, WXMLSUFFIX, WXSSSUFFIX, WXSSUFFIX } = require('../helpers/constant')
 
 
 
@@ -14,6 +14,8 @@ function loader(code) {
         parseWxml(this, code, callback)
     } else if(WXSSSUFFIX.test(this.resourcePath)) {
         parseWxss(this, code, callback)
+    } else if(WXSSUFFIX.test(this.resourcePath)) {
+        parseWxss(this, code, callback, 'wxs')
     } else {
         callback(null, code);
     }

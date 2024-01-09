@@ -93,7 +93,10 @@ module.exports = {
           type: 'asset/resource',
           generator: {
             filename: '[path][name][ext]'
-          }
+          },
+          use: [
+            'wxmini-plugin-webpack'
+          ]  
         },
         {
           test: /\.wxss/,
