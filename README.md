@@ -8,13 +8,15 @@ npm -i -D wxmini-plugin-webpack
 
 ### 优势/好处
 
-- 可以区分不同的环境变量，dev, production开发环境等等
+- 1.可以区分不同的环境变量，dev, production开发环境等等
 
-- 无用代码筛检，剔除
+- 2.无用代码筛检，剔除
 
-- `@import`， `require`， `<wxs src'@src/test.wxs'></wxs>`, `json文件的组件引入` 可以用别名引入，如@src, @common等
+- 3.`@import`， `require`， `<wxs src'@src/test.wxs'></wxs>`, `json文件的组件引入` 可以用别名引入，如@src, @common等
 
-- 代码体积小，不会像uniapp, Taro，产生大量运行代码
+- 4.代码体积小，不会像uniapp, Taro，产生大量运行代码
+
+- 支持ts，支持es6语法的`import` `export deufalt`
 
 ### 注意事项
 
