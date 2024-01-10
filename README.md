@@ -7,6 +7,7 @@ npm -i -D wxmini-plugin-webpack
 ```
 
 [js-template 案例](https://github.com/WangZhenHao/wxmini-plugin-webpack/tree/master/example/js-template)
+
 [ts-template 案例](https://github.com/WangZhenHao/wxmini-plugin-webpack/tree/master/example/ts-template)
 
 ### 优势/好处
