@@ -8,4 +8,4 @@ var CleanCSS = require('clean-css');
 // }`
 const css = "@import '../commont.wxss'; .test{ font-size: 12px; }"
 
-console.log(new CleanCSS({inline: false }).minify(css))
+console.log(new CleanCSS({inline: 'none' }).minify(css))
