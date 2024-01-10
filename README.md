@@ -14,6 +14,8 @@ npm -i -D wxmini-plugin-webpack
 
 - `@import`， `require`， `<wxs src'@src/test.wxs'></wxs>`, `json文件的组件引入` 可以用别名引入，如@src, @common等
 
+- 代码体积小，不会像uniapp, Taro，产生大量运行代码
+
 ### 注意事项
 
 - 子的`.less`的文件如果引入在父页面的`less`中，会合并到一个文件，`.wxss`文件后缀用`@import`引入的文件，不会合并一个文件
