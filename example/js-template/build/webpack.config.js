@@ -2,12 +2,13 @@ var path = require('path');
 const webpack = require("webpack");
 const MiniProgramPlugin  = require('wxmini-plugin-webpack').plugin
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const env = require('../src/env');
 
 const resolve = function(file) {
   return path.join(__dirname, '..', file)
 }
 
-const BUILD_ENV = process.env.BUILD_ENV
+const BUILD_ENV = env.enviroment
 
 module.exports = {
     resolve: {
@@ -43,6 +44,7 @@ module.exports = {
     },
     resolve: {
       alias: {
+        "@src": resolve('./src'),
         '@components': resolve('./src/components'),
         "@page": resolve('./src/page'),
         '@common': resolve('./src/common'),

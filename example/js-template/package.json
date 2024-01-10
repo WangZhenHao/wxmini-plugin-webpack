@@ -5,8 +5,10 @@
   "main": "n",
   "scripts": {
     "dev": "cross-env BUILD_ENV=dev webpack --config ./build/webpack.config.js --watch --mode development",
-    "build": "cross-env BUILD_ENV=prod webpack --config ./build/webpack.config.js --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cross-env BUILD_ENV=test webpack --config ./build/webpack.config.js --watch --mode development",
+    "build:prod": "cross-env BUILD_ENV=prod webpack --config ./build/webpack.config.js --mode production",
+    "build:test": "cross-env BUILD_ENV=test webpack --config ./build/webpack.config.js --mode production",
+    "build:dev": "cross-env BUILD_ENV=dev webpack --config ./build/webpack.config.js --mode production"
   },
   "author": "",
   "license": "ISC",

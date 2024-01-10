@@ -9,4 +9,5 @@ sdfsdfsdfsaf
 <van-button type="primary">主要按钮1</van-button>
 
 <van-switch checked="{{ checked }}" bind:change="onChange" />
+<!-- <van-button loading type="info" loading-text="加载中..." /> -->
 </view>

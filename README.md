@@ -6,6 +6,14 @@ webpack5版本的微信小程序插件,让微信原生小程的开发也能变�
 npm -i -D wxmini-plugin-webpack
 ```
 
+### 注意事项
+
+- 子的`.less`的文件如果引入在父页面的`less`中，会合并到一个文件，`.wxss`文件后缀用`@import`引入的文件，不会合并一个文件
+
+- 只有两个公共js文件，`runtime.js`和`common.js`
+
+
+### webpack配置
 ```js
 // webpack配置
 
@@ -35,7 +43,23 @@ module.exports = {
           use: [
             'wxmini-plugin-webpack'
           ]
-        }
+        },
+        {
+          test: /\.wxs$/,
+          type: 'asset/resource',
+          generator: {
+            filename: '[path][name][ext]'
+          },
+          use: ['wxmini-plugin-webpack']
+        },
+        {
+          test: /\.wxss/,
+          type: 'asset/resource',
+          generator: {
+            filename: '[path][name][ext]'
+          },
+          use: ['wxmini-plugin-webpack']
+        },
         ...,
         ...,
         ...

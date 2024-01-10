@@ -1,0 +1,1 @@
+module.exports = require(`./env.${process.env.BUILD_ENV}.js`)

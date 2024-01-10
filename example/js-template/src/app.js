@@ -1,11 +1,12 @@
+import env from '@src/env'
 
 App({
     global: {
       
     },
     onLaunch() {
-      console.log(process.env.BUILD_ENV)
-      console.log(wx.request,1111212)
+      // console.log(process.env.BUILD_ENV)
+      console.log(env)
     }
   });
   
