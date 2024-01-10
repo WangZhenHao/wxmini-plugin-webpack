@@ -16,7 +16,7 @@ npm -i -D wxmini-plugin-webpack
 
 - 4.代码体积小，不会像uniapp, Taro，产生大量运行代码
 
-- 支持ts，支持es6语法的`import` `export deufalt`
+- 5.支持ts，支持es6语法的`import` `export deufalt`
 
 ### 注意事项
 
