@@ -6,6 +6,9 @@ webpack5版本的微信小程序插件,让微信原生小程的开发也能变�
 npm -i -D wxmini-plugin-webpack
 ```
 
+[js-template 案例](https://github.com/WangZhenHao/wxmini-plugin-webpack/tree/master/example/js-template)
+[ts-template 案例](https://github.com/WangZhenHao/wxmini-plugin-webpack/tree/master/example/ts-template)
+
 ### 优势/好处
 
 - 1.可以区分不同的环境变量，dev, production开发环境等等
@@ -87,7 +90,7 @@ module.exports = {
 }
 ```
 
-### 本地运行
+### 本地调试
 ```
 安装依赖
 npm i
