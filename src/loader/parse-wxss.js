@@ -16,11 +16,12 @@ const map = {
     },
     wxs: {
         re: /require\(('|")([^)]*.wxs)('|")\)/g,
-        miniFn: (code) => {
-            const result = UglifyJS.minify(code, { compress: false, mangle: false })
+        // miniFn: (code) => {
+        //     const result = UglifyJS.minify(code, { compress: false, mangle: false })
 
-            return result.code;
-        }
+        //     return result.code;
+        // }
+        miniFn: (code) => code
     }
 }
 
