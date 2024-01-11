@@ -1,3 +1,5 @@
+
+
 Page({
     data: {
       checked: true,
@@ -9,4 +11,9 @@ Page({
       // 需要手动对 checked 状态进行更新
       this.setData({ checked: detail });
     },
+    getHttp() {
+      wx.$axios.get('https://www.baidu.com').then(res => {
+        console.log(res)
+      })
+    }
   });

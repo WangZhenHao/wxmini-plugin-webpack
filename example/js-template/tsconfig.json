@@ -4,9 +4,9 @@
         "baseUrl": "./src",
         "types": ["miniprogram-api-typings"],
         "paths": {
+          "@src/*": ["./src/*"],
           "@components/*": ["./src/components/*"],
-          "@lib/*": ["./src/lib/*"],
-          "@utils/*": ["./src/utils/*"]
+          "@common/*": ["./src/common/*"]
         }
     },
     

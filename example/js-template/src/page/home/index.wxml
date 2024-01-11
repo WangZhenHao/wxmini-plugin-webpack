@@ -6,7 +6,7 @@ sdfsdfsdfsaf
 {{ tools.foo }} -->
 <view>
     <van-button type="default">默认按钮</van-button>
-<van-button type="primary">主要按钮1</van-button>
+<van-button type="primary" bind:tap="getHttp">获取请求</van-button>
 
 <van-switch checked="{{ checked }}" bind:change="onChange" />
 <!-- <van-button loading type="info" loading-text="加载中..." /> -->

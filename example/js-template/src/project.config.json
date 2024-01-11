@@ -1,33 +1,35 @@
 {
-    "appid": "wx2c940aaf35969948",
-    "compileType": "miniprogram",
-    "libVersion": "3.3.0",
-    "packOptions": {
+  "appid": "wx2c940aaf35969948",
+  "compileType": "miniprogram",
+  "libVersion": "3.3.0",
+  "packOptions": {
+    "ignore": [],
+    "include": [
+      {
+        "value": "commons.js",
+        "type": "file"
+      }
+    ]
+  },
+  "setting": {
+    "coverView": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "enhance": true,
+    "showShadowRootInWxmlPanel": true,
+    "packNpmRelationList": [],
+    "babelSetting": {
       "ignore": [],
-      "include": [{
-        "type": "file",
-        "value": "commons.js"
-      }]
+      "disablePlugins": [],
+      "outputPath": ""
     },
-    "setting": {
-      "coverView": true,
-      "es6": true,
-      "postcss": true,
-      "minified": true,
-      "enhance": true,
-      "showShadowRootInWxmlPanel": true,
-      "packNpmRelationList": [],
-      "babelSetting": {
-        "ignore": [],
-        "disablePlugins": [],
-        "outputPath": ""
-      },
-      "condition": false,
-      "test": 1
-    },
-    "condition": {},
-    "editorSetting": {
-      "tabIndent": "insertSpaces",
-      "tabSize": 2
-    }
+    "condition": false,
+    "test": 1
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
   }
+}
