@@ -88,7 +88,13 @@ module.exports = {
           type: 'asset/resource',
           generator: {
             filename: '[path][name][ext]'
-          }
+          },
+          use: [
+            // 'wxmini-plugin-webpack5'
+            {
+              loader: path.resolve(__dirname, '../../src/index.js'),
+            },
+          ]
         },
         {
           test: /\.wxss/,

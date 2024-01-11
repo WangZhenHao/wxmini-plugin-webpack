@@ -1,6 +1,6 @@
 var foo = "测试";
-var bar = function(d) {
-  return d;
+var bar = function(test) {
+  return test;
 }
 module.exports = {
   foo: foo,
