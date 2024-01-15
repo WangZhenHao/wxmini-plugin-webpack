@@ -1,13 +1,15 @@
+// var b = 1;
 var foo = "测试";
 var bar = function(test) {
   return test;
 }
-// 你好
+/*
+ * test
+*/
 module.exports = {
   foo: foo,
-  bar: bar // 测试
+  bar: bar
 };
 
-/**
- * 测试
- */
+const b = 1;// 你好
+const a = '12'

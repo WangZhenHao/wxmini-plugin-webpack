@@ -6,13 +6,20 @@ const {
 } = require('./parse-wxml');
 const { relativePath } = require("../helpers/utils");
 // var CleanCSS = require('clean-css');
-var UglifyJS = require("uglify-js");
+// var UglifyJS = require("uglify-js");
 const { RELATIVEPATH } = require('../helpers/constant')
+
+// 移除注释
+const removeCommoent = function(code) {
+    var re = /(\/\/.*\n?)|(\/\*[\s\S]*?\*\/)/g;
+
+    return code.replace(re, '')
+}
 
 const map = {
     wxss: {
         re: /@import ('|")([^"].+?)('|");/g,
-        miniFn: (code) => code
+        miniFn: (code) => removeCommoent(code)
     },
     wxs: {
         re: /require\(('|")([^)]*.wxs)('|")\)/g,
@@ -21,7 +28,7 @@ const map = {
 
         //     return result.code;
         // }
-        miniFn: (code) => code
+        miniFn: (code) => removeCommoent(code)
     }
 }
 
@@ -31,16 +38,8 @@ async function parseWxss(context, source, callback, key = 'wxss') {
     const promiseModule = [];
     const wxssDepsReg = map[key].re;
     const miniFn = map[key].miniFn
-    // 不解析@import关键字
-    // const result = new CleanCSS({inline: false }).minify(source);
-    source = miniFn(source);
-    // 如果出错了
-    // if(result.errors && result.errors.length) {
-    //     callback(JSON.stringify(result.errors), result.style)
-    //     return;
-    // }
 
-    // source = result.styles
+    source = miniFn(source);
 
     while ((matched = wxssDepsReg.exec(source)) !== null) {
         let dep = matched[2];
