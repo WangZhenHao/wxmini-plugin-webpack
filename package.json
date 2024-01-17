@@ -1,6 +1,6 @@
 {
   "name": "wxmini-plugin-webpack",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "wx miniprogram plugin",
   "main": "src/index.js",
   "files": [

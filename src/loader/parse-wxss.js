@@ -11,9 +11,10 @@ const { RELATIVEPATH } = require('../helpers/constant')
 
 // 移除注释
 const removeCommoent = function(code) {
-    var re = /(\/\/.*\n?)|(\/\*[\s\S]*?\*\/)/g;
+    // var re = /(\/\/.*\n?)|(\/\*[\s\S]*?\*\/)/g;
 
-    return code.replace(re, '')
+    // return code.replace(re, '')
+    return code;
 }
 
 const map = {
