@@ -7,7 +7,7 @@ var minifyCss = require('../src/lib/clean-css/index.js')
 //     background: red;
 //     font-size: 12rpx;
 // }`
-const css = `@import '../commont.wxss'; a .test{ font-size: 12px; } @font-face {
+const css1 = `@import '../commont.wxss'; a .test{ font-size: 12px; } @font-face {
     font-display: auto;
     font-family: vant-icon;
     font-style: normal;
@@ -15,7 +15,7 @@ const css = `@import '../commont.wxss'; a .test{ font-size: 12px; } @font-face {
     src: url(//at.alicdn.com/t/c/font_2553510_kfwma2yq1rs.woff2?t=1694918397022)
             format("woff2"),
         url("//at.alicdn.com/t/c/font_2553510_kfwma2yq1rs.woff?t=1694918397022")
-            format("woff");
+            format("woff"); // 测试
 }
 // 测试
 
@@ -36,5 +36,5 @@ const css = `@import '../commont.wxss'; a .test{ font-size: 12px; } @font-face {
 // }
 
 // console.log(new CleanCSS({inline: 'none' }).minify(css))
-console.log(minifyCss(css))
+console.log(minifyCss(css1))
 // console.log(minify(css))

@@ -1,4 +1,5 @@
 var tokenize = require("./tokenizer/tokenize");
+var serializeStyles = require('./writer/simple');
 
 function isTracking(maps, source) {
     return source in maps;
@@ -69,7 +70,9 @@ function minifyCss(input) {
         warnings: [],
     };
     const token = tokenize(input, context);
-    console.log(token)
+    var optimizedStyles = serializeStyles(token, context);
+    // console.log(optimizedStyles)
+    return optimizedStyles
 }
 
 module.exports = minifyCss;
