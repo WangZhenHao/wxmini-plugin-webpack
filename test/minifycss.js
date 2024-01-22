@@ -1,5 +1,7 @@
 var CleanCSS = require('clean-css');
 var minifyCss = require('../src/lib/clean-css/index.js')
+const fs = require('fs');
+const path = require('path')
 
 // const css = `
 // @import "../commont.wxss"
@@ -7,7 +9,7 @@ var minifyCss = require('../src/lib/clean-css/index.js')
 //     background: red;
 //     font-size: 12rpx;
 // }`
-const css1 = `@import '../commont.wxss'; a .test{ font-size: 12px; } @font-face {
+const test = `@import '../commont.wxss'; a .test{ font-size: 12rpx; } @font-face {
     font-display: auto;
     font-family: vant-icon;
     font-style: normal;
@@ -23,18 +25,34 @@ const css1 = `@import '../commont.wxss'; a .test{ font-size: 12px; } @font-face 
  * 测试
  * /
 `
-// var re = /(\/\/.*\n?)|(\/\*[\s\S]*?\*\/)/g;
-// var re2 = /\/\*[\s\S]*?\*\/|(?<=[^:])\/\/.*|^\/\/.*/g
-// function minify(code) {
-//     // var result = code
-//     //     .replace(/( [^0-9a-zA-Z\\.#])\\s+/g, "$1")
-//     //     .replace(/\\s ( [^0-9a-zA-Z\\.#]+)/g, "$1")
-//     //     .replace(/;}/g, "}")
-//     //     .replace(/\/\*.*?\*\//g, "");
-//     const result =  code.replace(re2, '')
-//     return result;
-// }
 
-// console.log(new CleanCSS({inline: 'none' }).minify(css))
-console.log(minifyCss(css1))
-// console.log(minify(css))
+var test2 = `
+
+
+/*
+  .tes3 { 
+    color: pink;
+  }
+*/
+
+.test1 {
+    // counter-reset: 1;
+    background: url('//www.baidu.com/1.png');
+    color: red; // test
+    /* background:red; */
+}
+
+/* .test {
+    background: url('//www.baidu.com/1.png')
+} */
+`
+const res = minifyCss(test2);
+console.log(res)
+fs.writeFile(path.resolve(__dirname, './minfi.css'), res.styles, function(err) {
+    if(err) {
+        return console.log(err);
+    }
+    // console.log("The file was saved!");
+}); 
+
+// console.log(new CleanCSS({}).minify(test2))
