@@ -32,6 +32,22 @@ function forEachUsingPage(pages, fn) {
     return ps;
 }
 
+function forEachUsingSubPage(pages, fn) {
+    let ps = [];
+
+    for (const key in pages || {}) {
+        let element = pages[key];
+        element.pages.forEach(page => {
+            const subPage = element.root + page;
+
+            ps.push(fn(subPage, subPage));
+        })
+        
+    }
+
+    return ps;
+}
+
 async function resolveComponentsPath(resolver, request) {
     let content = {};
 
@@ -43,9 +59,9 @@ async function resolveComponentsPath(resolver, request) {
 
     const context = dirname(request);
     const components = new Map();
-    const { pages, usingComponents, publicComponents } = content;
+    const { pages, usingComponents, subPackages } = content;
 
-    if (!usingComponents && !pages && !publicComponents)
+    if (!usingComponents && !pages && !subPackages)
         return components;
 
     /**
@@ -78,6 +94,17 @@ async function resolveComponentsPath(resolver, request) {
     );
 
     let noramlPages = forEachUsingPage(pages, async (key, item) => {
+        item = "./" + item;
+        let component = await resolveComponent(resolver, context, item);
+        components.set(key, {
+            request,
+            origin: item,
+            absPath: component,
+            type: "normal",
+        });
+    })
+
+    let noramlSubPage = forEachUsingSubPage(subPackages, async (key, item) => {
         item = "./" + item;
         let component = await resolveComponent(resolver, context, item);
         components.set(key, {
@@ -131,7 +158,8 @@ async function resolveComponentsPath(resolver, request) {
 
     await Promise.all([
         ...normalPromises,
-        ...noramlPages
+        ...noramlPages,
+        ...noramlSubPage
         // ...pluginPromises,
         // ...genericesPromises,
     ]);

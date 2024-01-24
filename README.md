@@ -110,5 +110,15 @@ npm run dev
 npm run build
 ```
 
+```
+npm源切换
+
+npm config get registry
+
+npm config set registry https://registry.npmjs.org/
+
+npm config set registry https://registry.npmmirror.com
+```
+
 
 ### qq讨论群: 475870039
