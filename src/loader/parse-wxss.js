@@ -5,6 +5,7 @@ const {
     calResolve
 } = require('./parse-wxml');
 const { relativePath } = require("../helpers/utils");
+const CleanCSS = require('../lib/clean-css/index.js')
 // var CleanCSS = require('clean-css');
 // var UglifyJS = require("uglify-js");
 const { RELATIVEPATH } = require('../helpers/constant')
@@ -20,7 +21,10 @@ const removeCommoent = function(code) {
 const map = {
     wxss: {
         re: /@import ('|")([^"].+?)('|");/g,
-        miniFn: (code) => removeCommoent(code)
+        miniFn: (code) => {
+            const  res = CleanCSS(code);
+            return res.styles
+        }
     },
     wxs: {
         re: /require\(('|")([^)]*.wxs)('|")\)/g,
