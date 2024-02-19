@@ -5,7 +5,7 @@ const JSONSUFFIX = /\.json$/
 const WXMLSUFFIX = /\.wxml$/
 const WXSSSUFFIX = /\.wxss$/
 const WXSSUFFIX = /\.wxs$/
-const LOADER_ACCEPT_FILE_EXTS = ['.wxs'];
+const LOADER_ACCEPT_FILE_EXTS = ['.wxs', '.wxml'];
 // 相对路径
 const RELATIVEPATH = /^(\.\/|\.\.\/)/
 

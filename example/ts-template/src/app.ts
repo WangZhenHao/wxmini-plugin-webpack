@@ -1,5 +1,5 @@
 // const test = require('./lib/test2')
-const a = require('./lib/test')
+const a = require('./lib/test.js')
 
 let b: { name?: string } = {}
 
