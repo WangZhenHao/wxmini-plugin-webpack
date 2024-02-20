@@ -1,6 +1,6 @@
 {
   "name": "wxmini-plugin-webpack",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "wx miniprogram plugin",
   "main": "src/index.js",
   "files": [
@@ -16,8 +16,8 @@
   },
   "homepage": "https://github.com/WangZhenHao/wxmini-plugin-webpack#readme",
   "scripts": {
-    "dev": "webpack --config ./example/resolve-template/webpack.config.js --watch",
-    "build": "webpack --config ./example/resolve-template/webpack.config.js",
+    "dev": "webpack --config ./example/resolve-template/webpack.config.js --watch --mode=development",
+    "build": "webpack --config ./example/resolve-template/webpack.config.js --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

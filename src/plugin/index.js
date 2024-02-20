@@ -1,5 +1,6 @@
 const FileEntryPlugin = require('./FileEntryPlugin')
 const MiniTemplatePlugin = require('./MiniTemplatePlugin')
+const LogPlugin = require('./LogPlugin')
 
 /** @typedef {import("webpack/lib/Compilation.js")} Compilation */
 
@@ -27,6 +28,9 @@ module.exports = class MiniProgramPlugin {
                 additionalAssets: true          
             }, this.setEmitHook.bind(this))
         })
+
+        
+        new LogPlugin().apply(compiler)
     }
 
     /**
@@ -42,5 +46,7 @@ module.exports = class MiniProgramPlugin {
             }
         })
     }
+
+    
 };
 

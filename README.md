@@ -10,6 +10,9 @@ npm -i -D wxmini-plugin-webpack
 
 [ts-template 案例](https://github.com/WangZhenHao/wxmini-plugin-webpack/tree/master/example/ts-template)
 
+### prodution模式输出文件信息
+![图片](https://github.com/WangZhenHao/wxmini-plugin-webpack/raw/master/example/image/1.jpg)
+
 ### 优势/好处
 
 - 1.可以区分不同的环境变量，dev, production开发环境等等
@@ -94,9 +97,9 @@ module.exports = {
 ### To-do 
 
 >代办事项
-- [ ] wxss文件代码压缩
-- [ ] 输出打包文件信息
-- [ ] 显示打包进度
+- [x] wxss文件代码压缩
+- [x] 输出打包文件信息
+- [x] 显示打包进度
 
 ### 本地调试
 ```

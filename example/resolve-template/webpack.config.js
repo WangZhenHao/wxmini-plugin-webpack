@@ -9,7 +9,6 @@ module.exports = {
     //   }
     // },
     context: path.join(__dirname, './src'),
-    mode: 'development',
     entry: './app.json',
     devtool: false,
     output: {
