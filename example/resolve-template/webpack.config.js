@@ -106,6 +106,9 @@ module.exports = {
             // 'wxmini-plugin-webpack5'
             {
               loader: path.resolve(__dirname, '../../src/index.js'),
+              options: {
+                minifyWxss: true
+              }
             },
           ]
         },

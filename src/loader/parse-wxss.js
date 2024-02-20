@@ -21,7 +21,11 @@ const removeCommoent = function(code) {
 const map = {
     wxss: {
         re: /@import ('|")([^"].+?)('|");/g,
-        miniFn: (code) => {
+        miniFn: (code, options) => {
+            if(options.minifyWxss === false) {
+                return code
+            } 
+
             const  res = CleanCSS(code);
             return res.styles
         }
@@ -43,8 +47,9 @@ async function parseWxss(context, source, callback, key = 'wxss') {
     const promiseModule = [];
     const wxssDepsReg = map[key].re;
     const miniFn = map[key].miniFn
+    const options = context.getOptions();
 
-    source = miniFn(source);
+    source = miniFn(source, options);
 
     while ((matched = wxssDepsReg.exec(source)) !== null) {
         let dep = matched[2];
