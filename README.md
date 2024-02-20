@@ -10,8 +10,6 @@ npm -i -D wxmini-plugin-webpack
 
 [ts-template 案例](https://github.com/WangZhenHao/wxmini-plugin-webpack/tree/master/example/ts-template)
 
-### prodution模式输出文件信息
-![图片](https://github.com/WangZhenHao/wxmini-plugin-webpack/raw/master/example/image/1.jpg)
 
 ### 优势/好处
 
@@ -31,6 +29,8 @@ npm -i -D wxmini-plugin-webpack
 
 - 只有两个公共js文件，`runtime.js`和`common.js`
 
+### 生产模式输出文件信息
+![图片](https://github.com/WangZhenHao/wxmini-plugin-webpack/raw/master/example/image/1.jpg)
 
 
 ### webpack配置
