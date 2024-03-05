@@ -21,6 +21,6 @@
     "miniprogram-api-typings": "^3.12.2",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
-    "wxmini-plugin-webpack": "^1.0.6"
+    "wxmini-plugin-webpack": "last"
   }
 }
