@@ -16,6 +16,7 @@ module.exports = class Progress {
     }
 
     showList(stats) {
+        if(stats.compilation.errors && stats.compilation.errors.length) return;
         if(stats.compilation.options.mode !== 'production') return;
         
         readline.clearLine(process.stdout);
@@ -33,9 +34,9 @@ module.exports = class Progress {
 
         console.table(arrList.map(item => {
             const name = item[0].replace(/\\/g, '/').replace( /^\/(.*)/g, '$1');
-
+            const size = (item[1]._size / 1024)
             return {
-                size: (item[1]._size / 1024).toFixed(2) + 'KB',
+                size:  size >= 1024 ? (size / 1024).toFixed(2) + 'MB' : size.toFixed(2) + 'KB',
                 name: name.padEnd(padEnd),
             }
         }))
