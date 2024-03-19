@@ -1,8 +1,11 @@
 {
   "name": "wxmini-plugin-webpack",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "wx miniprogram plugin",
   "main": "src/index.js",
+  "engines": {
+    "node": ">=14.18.0"
+  },
   "files": [
     "src",
     "README.md"
