@@ -7,8 +7,14 @@
       "sourceMap": false,
       "declaration": false,
       "moduleResolution": "node",
-      "types": ["miniprogram-api-typings"],
-      "baseUrl": "./src"
+      "types": ["miniprogram-api-typings", "./src/typings/index.d.ts"],
+      "baseUrl": "./",
+      "paths": {
+        "@src/*": ["./src/*"],
+        "@components/*": ["./src/components/*"],
+        "@common/*": ["./src/common/*"],
+        "@lib/*": ["./src/lib/*"]
+      }
     },
     "include": ["./src"],
     "exclude": [

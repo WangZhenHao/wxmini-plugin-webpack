@@ -38,6 +38,8 @@ module.exports = {
         '@components': path.join(__dirname, './src/components'),
         "@page": path.join(__dirname, './src/page'),
         '@common': path.join(__dirname, './src/common'),
+        '@lib': path.join(__dirname, './src/lib'),
+        '@src': path.join(__dirname, './src')
       }
     },
     module: {

@@ -1,16 +1,14 @@
 // const test = require('./lib/test2')
-const a = require('./lib/test.js')
-
-let b: { name?: string } = {}
+// const a = require('./lib/test.js')
+import tools from '@src/utils/tools.js'
 
 App({
     global: {
       
     },
     onLaunch() {
-      console.log(wx)
-      console.log(a)
-      b.name = '12'
+      wx.$tools = tools
+      console.log(wx.$tools)
     }
   });
   
