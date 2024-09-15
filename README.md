@@ -17,7 +17,7 @@ npm -i -D wxmini-plugin-webpack
 
 - 2.无用代码筛检，剔除
 
-- 3.`@import`， `require`， `<wxs src'@src/test.wxs'></wxs>`, `json文件的组件引入` 可以用别名引入，如@src, @common等
+- 3.`@import`， `require`， `如：<wxs src='@src/test.wxs'></wxs>`, `json文件的组件引入` 可以用别名引入，如@src, @common等
 
 - 4.代码体积小，不会像uniapp, Taro，产生大量运行代码
 
