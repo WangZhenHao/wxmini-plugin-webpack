@@ -19,8 +19,8 @@
     "less": "^4.2.0",
     "less-loader": "^11.1.4",
     "miniprogram-api-typings": "^3.12.2",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4",
+    "webpack": "~5.89.0",
+    "webpack-cli": "~5.1.4",
     "wxmini-plugin-webpack": "latest"
   }
 }
