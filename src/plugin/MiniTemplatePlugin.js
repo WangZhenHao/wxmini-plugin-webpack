@@ -15,11 +15,12 @@ module.exports = class MiniTemplatePlugin {
                     const str = bootstrapSource._children[index]
                     if(typeof str === 'string' && str.indexOf('runtime.js') > -1) {
                         const chunk = module.chunk;
-                        const entry = path.join(this.options.outputUtil.outputPath, chunk.name);
+                        const entry = path.join(this.options.outputUtil.outputPath, chunk.name + '.js');
                         const runtime = path.join(this.options.outputUtil.outputPath, chunk.runtime + '.js')
                         const relPath = relativePath(entry, runtime)
+                        
                         // const entryModle = .entryModule
-                        bootstrapSource._children[index] = str.replace('./runtime.js', relPath)
+                        bootstrapSource._children[index] = str.replace(/\..*\/runtime\.js/, relPath)
                     }
                 }
                 // return bootstrapSource
