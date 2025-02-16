@@ -114,6 +114,10 @@ npm run build
 ```
 
 ```
+发包：
+npm login
+npm publish
+
 npm源切换
 
 npm config get registry
